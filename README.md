@@ -52,10 +52,18 @@ El ETL utiliza un mecanismo de seguridad para autorizar operaciones, diferencian
 ## 3. 🚀 Modos de Ejecución del ETL
 
 ### Opción A: Despliegue con Docker 
+#### A.0. Preparación del Entorno (Solo Primera Vez)
+
+1.  **Instalar WSL 2 (Windows) :** Docker Desktop requiere el Subsistema de Windows para Linux (WSL 2). Abre PowerShell como **Administrador** y ejecuta:
+    ```bash
+    wsl --install
+    wsl --set-default-version 2
+    ```
+2.  **Instalar Docker Desktop:** Descarga e instala la aplicación oficial dependiendo tu maquina https://www.docker.com/products/docker-desktop/
+3.  **Verificar el Servicio:** Abre la aplicación Docker Desktop y espera a que el icono de estado muestre **"Docker Desktop is Running"**. Esto es crucial para que el motor esté listo. 
 
 #### **A.1. Construcción de la Imagen**
 
-1.  Instala doker desktop dependiendo tu laptop/computadora: https://www.docker.com/products/docker-desktop/
 1.  Asegúrate de que Docker Desktop esté corriendo.
 2.  Desde la carpeta raíz del proyecto, ejecuta:
     ```bash
