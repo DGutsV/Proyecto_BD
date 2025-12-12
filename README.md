@@ -1,6 +1,7 @@
 # 📚 Proyecto Final 
 **Autores:** Almaraz M Ernesto, Gutierrez H Diego, Juarez H Sebastian
-**Materia:** Administración de Bases de Datos  
+**Materia:** Administración de Bases de Datos
+
 **Repositorio:** 
 
 Este proyecto implementa un proceso ETL (Extract, Transform, Load) para migrar datos transaccionales sensibles a un ambiente de Calidad (QA).
