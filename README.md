@@ -1,11 +1,9 @@
-# 📚 Proyecto Final ETL - Seudo-anonimización y Calendarización
-
-**Autor:** [Tu Nombre Completo]  
+# 📚 Proyecto Final 
+**Autores:** Almaraz M Ernesto, Gutierrez H Diego, Juarez H Sebastian
 **Materia:** Administración de Bases de Datos  
-**Video:** https://youtu.be/35KS2Cw-FJA
+**Repositorio:** 
 
-Este proyecto implementa un proceso ETL (Extract, Transform, Load) para migrar datos transaccionales sensibles a un ambiente de Calidad (QA), haciendo énfasis en la **Seudo-anonimización (R1)** y la **Calendarización (R10)**.
-
+Este proyecto implementa un proceso ETL (Extract, Transform, Load) para migrar datos transaccionales sensibles a un ambiente de Calidad (QA).
 ---
 
 ## 1. ⚙️ Instalación y Requerimientos (a.1.)
@@ -15,18 +13,17 @@ Este proyecto implementa un proceso ETL (Extract, Transform, Load) para migrar d
 | Requerimiento | Archivo de Validación | Propósito |
 | :--- | :--- | :--- |
 | **Python 3.9+** | `requirements.txt` | Lenguaje de ejecución del ETL. |
-| **Docker Desktop** | `Dockerfile` | Contenerización y despliegue inmutable (R10). |
+| **Docker Desktop** | `Dockerfile` | Contenerización y despliegue inmutable. |
 | **PostgreSQL / Supabase** | `config.yaml` | Motor de Base de Datos para Fuente y Destino. |
 
 ### 1.2. Configuración Inicial (Setup)
 
-1.  **Clonar el Repositorio:**
+1.  **Clonar el Repositorio: Desde la terminal, en la carpeta raíz del proyecto**
     ```bash
-    git clone [URL_DE_TU_REPOSITORIO] ENTREGA_FINAL_ETL
-    cd ENTREGA_FINAL_ETL
+    git clone https://github.com/DGutsV/Proyecto_BD
     ```
-2.  **Configuración de Conexión:** Las URLs de conexión (`source_url` y `target_url`) para tu instancia de Supabase/PostgreSQL están definidas en el archivo **`config.yaml`**.
-    * **Nota:** Estas URLs deben copiarse del Dashboard de Supabase (Sección: Database -> Connection String).
+2.  **Configuración de Conexión:** Las URLs de conexión (`source_url` y `target_url`) para la instancia de Supabase/PostgreSQL están definidas en el archivo **`config.yaml`**.
+    
 3.  **Verificación de BD:** Ejecuta el diagnóstico para confirmar que el `config.yaml` es válido y que las tablas existen:
     ```bash
     python diagnostico.py
@@ -34,14 +31,13 @@ Este proyecto implementa un proceso ETL (Extract, Transform, Load) para migrar d
 
 ---
 
-## 2. 🛡️ Manejo de Seguridad y Permisos (a.2.)
+## 2. 🛡️ Manejo de Seguridad y Permisos 
 
 ### 2.1. Almacenamiento de Credenciales
 
 * **Implementación Actual:** Las URLs de conexión están almacenadas en el archivo **`config.yaml`** subido al repositorio.
-* **Advertencia de Seguridad:** En un entorno real de producción, el acceso a los secretos debe separarse del código. La práctica recomendada es usar **Variables de Entorno** (`os.environ`) inyectadas en tiempo de ejecución.
 
-### 2.2. Control de Acceso Basado en Roles (RBAC - R7)
+### 2.2. Control de Acceso Basado en Roles 
 
 El ETL utiliza un mecanismo de seguridad para autorizar operaciones, diferenciando entre un operador de rutina y un desarrollador con permisos de reinicio de datos.
 
@@ -54,19 +50,18 @@ El ETL utiliza un mecanismo de seguridad para autorizar operaciones, diferencian
 
 ## 3. 🚀 Modos de Ejecución del ETL
 
-### Opción A: Despliegue con Docker (Recomendado para Producción - R10)
-
-Este es el método ideal para el despliegue en la nube o la programación automatizada (Cron Jobs). 
+### Opción A: Despliegue con Docker 
 
 #### **A.1. Construcción de la Imagen**
 
+1.  Instala doker desktop dependiendo tu laptop/computadora: https://www.docker.com/products/docker-desktop/
 1.  Asegúrate de que Docker Desktop esté corriendo.
 2.  Desde la carpeta raíz del proyecto, ejecuta:
     ```bash
     docker build -t etl-proyecto .
     ```
 
-#### **A.2. Ejecución CLI (Calendarización)**
+#### **A.2. Ejecución CLI **
 
 La ejecución sin interfaz, para ser programada:
 
