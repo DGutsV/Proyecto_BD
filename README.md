@@ -2,7 +2,7 @@
 
 **Autor:** [Tu Nombre Completo]  
 **Materia:** Administración de Bases de Datos  
-**Repositorio:** https://www.youtube.com/watch?v=YwyJyXtq6U4
+**Video:** https://youtu.be/35KS2Cw-FJA
 
 Este proyecto implementa un proceso ETL (Extract, Transform, Load) para migrar datos transaccionales sensibles a un ambiente de Calidad (QA), haciendo énfasis en la **Seudo-anonimización (R1)** y la **Calendarización (R10)**.
 
